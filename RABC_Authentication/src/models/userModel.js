@@ -15,6 +15,13 @@ const userSchema = new mongoose.Schema({
         required: true,
         enum: ["admin", "user","manager"]
     },
+    twoFactorSecret: { 
+        type: String 
+    }, // Secret for 2FA
+    is2FAEnabled: {
+         type: Boolean, 
+         default: false 
+    } // 2FA status
     },{
     timestamps: true,
 })
